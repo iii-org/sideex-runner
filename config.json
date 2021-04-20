@@ -1,0 +1,35 @@
+{
+    "input": {
+        "testSuites": ["sideex.json"]
+    },
+
+    "webdriver": {
+        "configs": [
+            {
+                "serverUrl": "http://localhost:4444",
+                "type": "selenium",
+                "browsers":[
+                    {
+                        "active": true,
+                        "capability": {
+                            "browserName": "chrome",
+														 "goog:chromeOptions": {
+                                "args": [
+                                    "headless",
+                                    "disable-dev-shm-usage",
+                                    "no-sandbox"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+	
+	"report": {
+        "path": "./",
+        "type":"html",
+        "snapshot": 1 
+    }
+}

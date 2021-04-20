@@ -1,0 +1,936 @@
+{
+  "time": 1618810577392,
+  "version": {
+    "sideex": [
+      3,
+      5,
+      2
+    ],
+    "format": [
+      2,
+      0,
+      0
+    ]
+  },
+  "suites": [
+    {
+      "title": "test0419",
+      "enableOnPlaying": true,
+      "cases": [
+        {
+          "title": "login",
+          "enableOnPlaying": true,
+          "networkSpeed": 15.26,
+          "records": [
+            {
+              "name": "open",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "https://demo.iiidevops.org/"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "setViewportSize",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "1600,900"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(<input/>)"
+                  },
+                  {
+                    "type": "name",
+                    "value": "name=username"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='app']/div[1]/form[1]/div[2]/div[1]/div[1]/input[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='username']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"username\"]"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYBM04BtAATXYBeAOQQaNYQF0OXbgWkAzDEgC2c6Zx4AmDbPkye+tFhoBXMOoogMYZqZTIsEFQisYIeUJADmAOWeu+MZmtpSQAEbG7AhUzGRhAJ40geAxoSAQ5hhQGCo0ADYIYCnYVgXQCAwY+dFIdg5ITi5WTSn2jgFWUPkQKCjMCPkwweYA+qPGWMhW+dn0mFgA8ki1cSAAvpTZdJ7gEH6d+JpW7PQQ8DAE4VoAHFoA7OEe+F09fQNDI+mzUPPYy6t8GRNtYoDQ6rgsKZ8vktlAcJDobDQVA8NxJHDbEE0AIEHAMDQUAACOh9ADuynYGyAA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "131,20"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "sendKeys",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(<input/>)"
+                  },
+                  {
+                    "type": "name",
+                    "value": "name=username"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='app']/div[1]/form[1]/div[2]/div[1]/div[1]/input[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='username']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"username\"]"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYBM04BtAATXYBeAOQQaNYQF0OXbgWkAzDEgC2c6Zx4AmDbPkye+tFhoBXMOoogMYZqZTIsEFQisYIeUJADmAOWeu+MZmtpSQAEbG7AhUzGRhAJ40geAxoSAQ5hhQGCo0ADYIYCnYVgXQCAwY+dFIdg5ITi5WTSn2jgFWUPkQKCjMCPkwweYA+qPGWMhW+dn0mFgA8ki1cSAAvpTZdJ7gEH6d+JpW7PQQ8DAE4VoAHFoA7OEe+F09fQNDI+mzUPPYy6t8GRNtYoDQ6rgsKZ8vktlAcJDobDQVA8NxJHDbEE0AIEHAMDQUAACOh9ADuynYGyAA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "public_pm"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(<input/>)"
+                  },
+                  {
+                    "type": "name",
+                    "value": "name=password"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='app']/div[1]/form[1]/div[3]/div[1]/div[1]/input[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[3]/div[1]/div[1]/input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='password']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"password\"]"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYBM04BtAATXYBeAOQQaNYQF0OXbgWkAzDEgC2c6Zx4BmDbPkye+tFhoBXMOoogMYZnRQoA7svZWMEPKEgBzAHIQVBGZjM1tKSAAjY3YEKmYAJiswAE8aIPx7JxcrCHMMKAwVGgAbBDB06xxKEugEBgximKQ7CAdnJFdKLACKzPbOkChi1pRmBGKYEPMAfWnjLGQrYvz6TCwAeQ7F-DIAX0p8uk9wCD8e5k0rdnoIeBgCCPiADniAdgiPfCshkbGJqbCIGWUFW2E2TWYewOUBozVwWFMxWK0Jw8MRyOsUCgeG4kmhtnwphQyG6gQABMtvMYQLsgA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "156,11"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "sendKeys",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(<input/>)"
+                  },
+                  {
+                    "type": "name",
+                    "value": "name=password"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='app']/div[1]/form[1]/div[3]/div[1]/div[1]/input[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[3]/div[1]/div[1]/input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='password']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"password\"]"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYBM04BtAATXYBeAOQQaNYQF0OXbgWkAzDEgC2c6Zx4BmDbPkye+tFhoBXMOoogMYZnRQoA7svZWMEPKEgBzAHIQVBGZjM1tKSAAjY3YEKmYAJiswAE8aIPx7JxcrCHMMKAwVGgAbBDB06xxKEugEBgximKQ7CAdnJFdKLACKzPbOkChi1pRmBGKYEPMAfWnjLGQrYvz6TCwAeQ7F-DIAX0p8uk9wCD8e5k0rdnoIeBgCCPiADniAdgiPfCshkbGJqbCIGWUFW2E2TWYewOUBozVwWFMxWK0Jw8MRyOsUCgeG4kmhtnwphQyG6gQABMtvMYQLsgA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "OpenStack0"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(Login)"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='app']/div[1]/form[1]/button[1]/span[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//button[1]/span[1]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=button.el-button.el-button--primary > span"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYBM04BtAATXYBeAOQQaNYQF0OXbgWkAzDEgC2c6QCMArmDDZ1LFHSzqKIDGGYAbDAHM0OShgh5QkWwDkIKhMyMRHEBsoekwsAHkkdmRmMgBfJyg6V3AIT29ffG1dbDN2egh4GAINACYADlKAdg0XfDMwAE8aTJBsvUCoKwgUFGYEKxh27AACAaGdDpgYGiQ0FQgkRrMUJqtWgHcBRlwRggAGfYBSAG4RhaR7LCGLPRVdgGZ9mioTs2DQ7EjopFiQBPMSV+uCwWisVkSOBBYIhgKgeG4kkSlnwdF6G2U7BGAAoFFosFAwGFsVAAJTAPEEonYBDYhDkpRIbFwRZYchacgAa0ECG4+yREB5pjiQA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "201,7"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            }
+          ]
+        },
+        {
+          "title": "en",
+          "enableOnPlaying": true,
+          "networkSpeed": 11.76,
+          "records": [
+            {
+              "name": "open",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "https://demo.iiidevops.org/#/dashboard"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "setViewportSize",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "1600,900"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(<i/>)"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='app']/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/i[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[1]/div[1]/i[1]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=i.el-icon-location"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYBM04BtAATXYBeAOQQaNYQF0OXbgWmceAJgWz5MnusXcAzKs3650tEYogMYZmYwQ8oSAHMAchAC2CZmjNQANhBQozAg+MGhQ2DA+GFD0mDiUUTFgcQDySOzIzGQAvpTRdHbgEM5uHviKZhBIaBAwDP40GDQArjTMPmgolpRVNTDhWGBIGD6B5cM07BgA7lgw7ljNMAAsAOwAHEpmwz5lIABGzWBg2GaQ+2hYGVTMAAzefgHMAATBMOwTU7MwKMEAZhk-pcPAlorFsGkMkgsiBcuYoDRobhFj4fHkoDhkc1UeioHhuJJ0ZZ8IAIHUAEhaAdCVABYRLEAAIpUwD+5s9ALRygHDTBBYBwdFBMbJAA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "8,11"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 17
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(English)"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//ul[@id='dropdown-menu-4782']/li[2]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//body[1]/ul[1]/li[2]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=#dropdown-menu-4782 > li.el-dropdown-menu__item:nth-child(2)"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYFcAbAbQAE0AJgF4A5AKQYaAjAHcsMALYIs7GABYA7AA4ATCIC6LTmm479FEBjDNlAc2MomlDBDyhItgHIQlzYxcgAIzQsAQQqZhgySihOCBQUG04YcUlpOUVldgB9bLQwBAULTgwoekwsAHkkMKRmHRAAX2coOjdwCC8fBGYuC1j4xPwEZNSpWXklFQACEZgaSRpkC0FmMfTJrPVtBsoUMABPTh78BfQwCtxpiECUDE52AoBuabBJK4BWAAYaKhfjgBmYCuBAAzBofn9XkgIFgUACMEgFDBEWhbCErlBlAUkK9JC8AF4wEJhKhXHRfL4EJ4WKjzOJYqbWfCBKxvZHKATFUrlbDVWrMMjNSytOq4dydby+fD+SgQJBoCApNAoG7HLn4MBIdg9GJxBJJFIScYZKY5PIFBTTFXK1WBdXcsoXPk1Zb4IUtHDijpdaUgARoOC0mDyiQyZj9fVDEALGhLJC5UOyCz7I4nECA4HTABsoKIHwIOh0vxplBKToq-LdhCaLSgeG4+hazJAgFo5QDhpk0gA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "49,12"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            }
+          ]
+        },
+        {
+          "title": "tw",
+          "enableOnPlaying": true,
+          "networkSpeed": 14.88,
+          "records": [
+            {
+              "name": "open",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "https://demo.iiidevops.org/#/dashboard"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "setViewportSize",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "1600,900"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(<i/>)"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='app']/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/i[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[1]/div[1]/i[1]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=i.el-icon-location"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYBM04BtAATXYBeAOQQaNYQF0OXbgWmceAJgWz5MnusXcAzKs3650tEYogMYZmYwQ8oSAHMAchAC2CZmjNQANhBQozAg+MGhQ2DA+GFD0mDiUUTFgcQDySOzIzGQAvpTRdHbgEM5uHviKZhBIaBAwDP40GDQArjTMPmgolpRVNTDhWGBIGD6B5cM07BgA7lgw7ljNMAAsAOwAHEpmwz5lIABGzWBg2GaQ+2hYGVTMAAzefgHMAATBMOwTU7MwKMEAZhk-pcEM9nmZErFsGkMkgsiBcuYoDRYbhFj4fHkoDhUc10ZioHhuJJMZZ8MiMAArBBQMAdLocfwMfY2dLPVwYdkAfRornhQA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "14,11"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 9
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(中文)"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//ul[@id='dropdown-menu-4782']/li[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//body[1]/ul[1]/li[1]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=#dropdown-menu-4782 > li.el-dropdown-menu__item"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYFcAbAbQAE0AJgF4A5AKQYaAjAHcsMALYIs7GABYA7AA4ATCIC6LTmm4F9FEBjDNAtHKBw0wsYIeUJADmAOQhLmxi1E4IFBRmBE4YcUlpOUVldgB9eLQwBAULSAAjNCwBBCpmGDJKTgwoekwsAHkkXKRmMgBfSlK6F3AIT28EZi5-QODQ8MipWXklFQACMJgaSRpkC0FmYeixuPVtHQsUMABPTm78MCQILBQAMwwkBRgrtDds3AmoZRSkCbBJAG4JgC8YbK5KhPHQABgIoJ+s3QYAqTwgGRQGE47BSP0+NCeAFZQTQqD8DucwE8CFiAMy4-EWKgzQIvcbWfAZKyfG7KAQWEplWHYaq1eogJqWKA0Oq4FScTjNKA4XCuDpeHz4PyUAJBEL4aYrUaxFSJZKpCZoFARY0Ig4cygQJBoCCmlDmhAco5IdjdYqlcq8moLfBbIWlKB4bj6aWMkAACnO7CwUB5WAjUAAlMBo7H4wgIwgU5ckBG4NasOR2OQANZCBDcUGhiAV0z6KZYNzGFBMBpAA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "57,26"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            }
+          ]
+        },
+        {
+          "title": "history",
+          "enableOnPlaying": true,
+          "networkSpeed": 20.57,
+          "records": [
+            {
+              "name": "open",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "https://demo.iiidevops.org/#/dashboard"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "setViewportSize",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "1600,900"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "mouseOver",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(操作紀錄)"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='app']/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/div[6]/a[1]/li[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[1]/ul[1]/div[6]/a[1]/li[1]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=div:nth-child(6) > a > li.el-menu-item.submenu-title-noDropdown"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYBM04BtAATXYBeAOQQaNYQF0OXbgWmce8mTwBMC2csVzpAVwA2OldwBs0iEf1odFEBjDNAsyaAdeUAAvoBBk2xgh5QkAOYAchAAtgjMVrZIGPrh+GFYumhgCCG2kABGaFjsCFTMMGSUUPoQKCjMCPowCbowyakABCi6GbUwYMmxMFgY7NE07BgA7jiUKGAAnrHMdOycWP4wsQBmYLiNqgAMNFQA3I1QMRhIG0j+GQAUBACcBOSbWwDMD6oEAOwAlAcZ0ADW-miuhyMCO+hOZwulyeAA4HgBWVQPEw3b62cFQeiYLAAeSQuSQzDIAF9KBgoHRfOAIEFQnEQD5KAwkAgVswAMQsaCdODJNAIFAsGjRABWCCgYBg3K4fIFthKZQq+HR5Kx2DxBKJIFJdgphNwiX0+jJUBwBoMxt1UDw3D8NOCYWYaFs7HoEHghRhCG9EC2W2Y8tK5Uq1TQRywMBQMBOBOarRgVXq4ZVmM66vxyC1pLttMd+BQdDGIFdkA9BC9Pr9AcoGLVuIz+sI2skJoc+Bo+l0-mygHGYwAJdgAdDKNQAQOoAJC0A6EqACwiWIAARSngH9zEIYZcAfRoIUAvH6AXsj3u9x4APUwIgCfdQChsYAhMxMABZAFTmgGjUwDTmuPAAhGgEOVI4hELJDzbN4wLZXtqQA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "208,39"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(操作紀錄)"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='app']/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/div[6]/a[1]/li[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[1]/ul[1]/div[6]/a[1]/li[1]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=div:nth-child(6) > a > li.el-menu-item.submenu-title-noDropdown"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYBM04BtAATXYBeAOQQaNYQF0OXbgWmce8mTwBMC2csVzpAVwA2OldwBs0iEf1odFEBjDNAsyaAdeUAAvoBBk2xgh5QkAOYAchAAtgjMVrZIGPrh+GFYumhgCCG2kABGaFjsCFTMMGSUUPoQKCjMCPowCbowyakABCi6GbUwYMmxMFgY7NE07BgA7jiUKGAAnrHMdOycWP4wsQBmYLiNqgAMNFQA3I1QMRhIG0j+GQAUBACcBOSbWwDMD6oEAOwAlAcZ0ADW-miuhyMCO+hOZwulyeAA4HgBWVQPEw3b62cFQeiYLAAeSQuSQzDIAF9KBgoHRfOAIEFQnEQD5KAwkAgVswAMQsaCdODJNAIFAsGjRABWCCgYBg3K4fIFthKZQq+HR5Kx2DxBKJIFJdgphNwiX0+jJUBwBoMxt1UDw3D8NOCYWYaFs7HoEHghRhCG9EC2W2Y8tK5Uq1TQRywMBQMBOBOarRgVXq4ZVmM66vxyC1pLttMd+BQdDGIFdkA9BC9Pr9AcoGLVuIz+sI2skJoc+Bo+l0-mygHGYwAJdgAdDKNQAQOoAJC0A6EqACwiWIAARSngH9zEIYZcAfRoIUAvH6AXsj3u9x4APUwIgCfdQChsYAhMxMABZAFTmgGjUwDTmuPAAhGgEOVI4hELJDzbN4wLZXtqQA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "188,40"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            }
+          ]
+        },
+        {
+          "title": "logout",
+          "enableOnPlaying": true,
+          "networkSpeed": 20.57,
+          "records": [
+            {
+              "name": "open",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "https://demo.iiidevops.org/#/activities/project-activities"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "setViewportSize",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "1600,900"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(<i/>)"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='app']/div[1]/div[2]/div[1]/div[1]/div[3]/div[2]/div[1]/i[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[2]/div[1]/i[1]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=i.el-icon-caret-bottom"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYBM04BtAATXYBeAOQQaNYQF0OXbgWmceAJgWz5MnusXcAzKuX650tEYogMYZmYwQ8oSAHMAchAC2CZmjPt6EeDABWAAYoACMIAHYAMwAOK0ooABsIFBRmBESYNChsGCgIJAQwGFCLMAxXM0SMfLBMLAB5JHZkZjIAX0oaujtwCGc3D3xFb19-YLDI2PiQArQ-BhSaDBoAVxpmRLQUS0o5vxysMCQMRLThk5p2DAB3LBh3LFWYJQAWV7jKE8ShkFDVsDlHCUSChNBYFpUZhBMxJFLnEAAAgyMHYl2udxgKAyURaUXBHko1Vq9SaLSQbRAnXMUBoFNwT0SiS6UBwDNWTJZUDw3EkLMs+FcFQwAH0aK5EYBoBUAXXKAcZjAJmmgAknQA05rLAFBRgG83QBfilSgA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "14,12"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 7
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "tac",
+                    "value": "(登出)"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//li[@id='systemLogoutBtn']/span[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//ul[2]/li[1]/span[1]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=#systemLogoutBtn > span"
+                  }
+                ],
+                "tac": "TAC_LOCATOR:N4IgLghgxgtAbgUwE4GcCWB7AdiAXCARgDpiCQAaEADwAcIwALPEAehYBs0BtAATQBMAvAHIUATxRgEAWwAyGAOYYArmABCYLMIC6LFHSxcC2iiAxhmgbzdAX4qmMEPKEgKAchGkJm+iDkr96EPAwAKwADFAARhAA7ABmABzMppJi7J74-Gj67BBiuAAEEewYUADWANymxVD0mFgA8kj8yMxkAL6UJXSO4BCu7ukgnKb+kEFhkTEJSZSQEWhYzVTMMGSUUDkoKMwI7DD8SBg0-BgA7lgwHljKAPo3aFLS+bv7h8dnF1e3948w+2hwAQIfimAReCSPYpKVQRTRVEq1bCNZpIVogDpmKA0VG4a7sdidKA4XHKfGEqB4LjaQkWfCAaAVAF1ygHGYwCZpoAJJ0ANOZMwBQUeigA"
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "33,15"
+                  }
+                ],
+                "tac": ""
+              },
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
