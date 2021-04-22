@@ -29,7 +29,7 @@
                 "options": [
                   {
                     "type": "other",
-                    "value": "https://demo.iiidevops.org/"
+                    "value": "${base_url}/"
                   }
                 ],
                 "tac": ""
@@ -338,7 +338,7 @@
                 "options": [
                   {
                     "type": "other",
-                    "value": "https://demo.iiidevops.org/#/dashboard"
+                    "value": "${base_url}/#/dashboard"
                   }
                 ],
                 "tac": ""
@@ -489,7 +489,7 @@
                 "options": [
                   {
                     "type": "other",
-                    "value": "https://demo.iiidevops.org/#/dashboard"
+                    "value": "${base_url}/#/dashboard"
                   }
                 ],
                 "tac": ""
@@ -640,7 +640,7 @@
                 "options": [
                   {
                     "type": "other",
-                    "value": "https://demo.iiidevops.org/#/dashboard"
+                    "value": "${base_url}/#/dashboard"
                   }
                 ],
                 "tac": ""
@@ -791,7 +791,7 @@
                 "options": [
                   {
                     "type": "other",
-                    "value": "https://demo.iiidevops.org/#/activities/project-activities"
+                    "value": "${base_url}/#/activities/project-activities"
                   }
                 ],
                 "tac": ""

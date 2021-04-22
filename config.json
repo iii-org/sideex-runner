@@ -1,6 +1,7 @@
 {
     "input": {
-        "testSuites": ["sideex.json"]
+        "testSuites": ["./sideex.json"],
+        "variables": ["./variables.json"]
     },
 
     "webdriver": {
@@ -28,8 +29,8 @@
     },
 	
 	"report": {
-        "path": "./",
+        "path": "report/",
         "type":"html",
-        "snapshot": 1 
+        "snapshot": 1
     }
 }
