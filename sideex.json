@@ -29,7 +29,7 @@
                 "options": [
                   {
                     "type": "other",
-                    "value": "${base_url}/"
+                    "value": "${target_origin}/"
                   }
                 ],
                 "tac": ""
@@ -169,7 +169,7 @@
                 "options": [
                   {
                     "type": "other",
-                    "value": "public_pm"
+                    "value": "demo_pm"
                   }
                 ],
                 "tac": ""
@@ -269,7 +269,7 @@
                 "options": [
                   {
                     "type": "other",
-                    "value": "OpenStack0"
+                    "value": "zxcvQAWS1"
                   }
                 ],
                 "tac": ""
@@ -338,7 +338,7 @@
                 "options": [
                   {
                     "type": "other",
-                    "value": "${base_url}/#/dashboard"
+                    "value": "${target_origin}/#/dashboard"
                   }
                 ],
                 "tac": ""
@@ -489,7 +489,7 @@
                 "options": [
                   {
                     "type": "other",
-                    "value": "${base_url}/#/dashboard"
+                    "value": "${target_origin}/#/dashboard"
                   }
                 ],
                 "tac": ""
@@ -640,7 +640,7 @@
                 "options": [
                   {
                     "type": "other",
-                    "value": "${base_url}/#/dashboard"
+                    "value": "${target_origin}/#/dashboard"
                   }
                 ],
                 "tac": ""
@@ -791,7 +791,7 @@
                 "options": [
                   {
                     "type": "other",
-                    "value": "${base_url}/#/activities/project-activities"
+                    "value": "${target_origin}/#/activities/project-activities"
                   }
                 ],
                 "tac": ""

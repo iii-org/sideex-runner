@@ -41,6 +41,10 @@ if (verbose) {
     console.log('Selenium is not up in 30 seconds!')
     process.exit(1)
   }
+  const targetOrigin = process.env['target_origin']
+  console.log('Generating variables.json, target_origin=' + targetOrigin)
+  fs.writeFileSync('variables.json',
+    `{ "target_origin": "${targetOrigin}" }`)
   console.log('Running Sideex...')
   fs.rmdirSync("report", {recursive: true})
   fs.mkdirSync('report')
