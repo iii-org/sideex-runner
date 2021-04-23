@@ -1,6 +1,6 @@
 {
     "input": {
-        "testSuites": ["./sideex.json"],
+        "testSuites": ["repo/iiidevops/sideex/sideex.json"],
         "variables": ["./variables.json"]
     },
 

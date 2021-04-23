@@ -1,8 +1,7 @@
 FROM openjdk:8
 
 WORKDIR /usr/src/app
-COPY . .
-RUN chmod +x run.sh
+COPY app.js config.json package.json . 
 
 RUN apt update
 RUN apt install -y apt-utils
@@ -19,5 +18,7 @@ RUN wget https://selenium-release.storage.googleapis.com/3.141/selenium-server-s
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt install -y nodejs
 RUN npm install -g @sideex/runner
+
+RUN npm install
 
 CMD ["/bin/bash", "-c", "/usr/src/app/run.sh"]
