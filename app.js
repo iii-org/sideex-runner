@@ -35,7 +35,12 @@ if (verbose) {
   const testId = await mentionStart()
   console.log(`Test id is ${testId} , starting Selenium...`)
   const selenium = spawn('java', ['-jar', 'selenium-server-standalone-3.141.59.jar'])
-  // TODO: Check port 4444, wait until selenium is ready
+  try {
+    await waitSeleniumUp(1)
+  } catch (err) {
+    console.log('Selenium is not up in 30 seconds!')
+    process.exit(1)
+  }
   console.log('Running Sideex...')
   fs.rmdirSync("report", {recursive: true})
   fs.mkdirSync('report')
@@ -87,6 +92,38 @@ async function mentionStart() {
     commit_id: process.env['git_commit_id'],
   })
   return json.data.test_id
+}
+
+function waitSeleniumUp(trial) {
+  return new Promise((resolve, reject) => {
+    console.log('Waiting for selenium to be up, trail ' + trial)
+    if (trial > 30) {
+      reject()
+      return
+    }
+    setTimeout(async function () {
+      const result = await checkSelenium()
+      if (result) {
+        resolve()
+      } else {
+        try {
+          await waitSeleniumUp(trial + 1)
+          resolve()
+        } catch (err) {
+          reject()
+        }
+      }
+    }, 1000)
+  })
+}
+
+async function checkSelenium() {
+  try {
+    const res = await fetch('http://localhost:4444', {method: 'GET'})
+    return true
+  } catch (err) {
+    return false
+  }
 }
 
 async function mentionFinish(test_id, result, report) {
