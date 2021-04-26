@@ -1,7 +1,7 @@
 FROM openjdk:8
 
 WORKDIR /usr/src/app
-COPY app.js config.json package.json . 
+COPY app.js config.json package.json ./ 
 
 RUN apt update
 RUN apt install -y apt-utils
@@ -21,4 +21,4 @@ RUN npm install -g @sideex/runner
 
 RUN npm install
 
-CMD ["/bin/bash", "-c", "/usr/src/app/run.sh"]
+CMD ["/bin/bash", "-c", "node", "app.js"]

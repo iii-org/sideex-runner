@@ -1,0 +1,14 @@
+{
+  "name": "sideex-runner",
+  "version": "1.0.0",
+  "description": "Run Sideex",
+  "main": "app.js",
+  "author": "Romulus Urakagi Tsai",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "form-data": "^3.0.0",
+    "node-fetch": "^2.6.1",
+    "url-parse": "^1.4.7"
+  },
+  "devDependencies": {}
+}
