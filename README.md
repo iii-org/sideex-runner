@@ -1,6 +1,9 @@
 # sideex-runner
 Siddex runner for III-devops system.
 
+# Usage
+Save your script file named `sideex.json`, then put it under `<your project root>/iiidevops/sideex`.
+
 # pipeline.yaml usage
 ```
 - name: Test Sideex Runner
