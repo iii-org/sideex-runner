@@ -1,5 +1,5 @@
 # sideex-runner
-Siddex runner for III-devops system.
+Sideex runner for III-devops system.
 
 # Usage
 Save your Sideex script file named `sideex.json`, then put it under `<your project root>/iiidevops/sideex`.
