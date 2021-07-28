@@ -6,8 +6,6 @@ const {spawn, execSync} = require("child_process")
 
 const STORAGE_PREFIX = 'repo/iiidevops/sideex/'
 
-const origin = process.env['api_origin']
-const target = process.env['test_origin']
 const git = {
     url: process.env['git_url'],
     pUrl: parse(process.env['git_url']),
@@ -53,8 +51,7 @@ try {
         const testSuites = []
         const suites = fs.readdirSync(STORAGE_PREFIX)
         for (const file of suites) {
-            if (file.endsWith('sideex.json')) {
-                const fileName = file.substring(0, file.indexOf('.sideex.json'))
+            if (file.endsWith('.json')) {
                 testSuites.push(STORAGE_PREFIX + file)
             }
         }
@@ -85,9 +82,10 @@ try {
         }
 
         const data = fs.readFileSync(reportJSON, 'utf-8')
+        const report = fs.readFileSync(reportHTML, 'utf-8')
         const result = analyze(data)
         console.log('Uploading to API server...')
-        await mentionFinish(testId, JSON.stringify(result), data)
+        await mentionFinish(testId, JSON.stringify(result), report)
         console.log('Job done.')
     })()
 } catch (e) {
@@ -172,7 +170,7 @@ function analyze(data) {
         suites: {}
     }
     for (const suite of json.suites) {
-        const fileName = suite.fileName
+        const title = suite.title
         const result = {
             passed: 0,
             total: 0,
@@ -189,7 +187,7 @@ function analyze(data) {
                 result.passed++
             }
             result.total++
-            ret.suites[fileName] = result
+            ret.suites[title] = result
         }
     }
     return ret

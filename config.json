@@ -34,7 +34,7 @@
   },
   "report": {
     "path": "report/",
-    "type": "html",
+    "type": "all",
     "snapshot": 1
   }
 }
