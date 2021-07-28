@@ -26,3 +26,6 @@ Save your Sideex script file named `sideex.json`, then put it under `<your proje
         include:
         - sideex
 ```
+
+# Note
+When use multiple test suite files, you can't use the same suite name in different files.
