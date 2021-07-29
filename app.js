@@ -29,6 +29,10 @@ if (verbose) {
 try {
     (async () => {
         await login()
+        if (await checkPluginDisabled('sideex')) {
+            console.log('Sideex plugin is disabled.')
+            return
+        }
         console.log('Mention API Server test started.')
         const testId = await mentionStart()
 
@@ -109,6 +113,16 @@ function login() {
                 })
         })
     })
+}
+
+async function checkPluginDisabled(pluginName) {
+    const data = (await apiGet('/plugins')).data
+    for (const d of data) {
+        if (d.name === pluginName) {
+            return d.disabled
+        }
+    }
+    return false
 }
 
 async function mentionStart() {
