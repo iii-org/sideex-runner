@@ -17,7 +17,7 @@ RUN wget https://selenium-release.storage.googleapis.com/3.141/selenium-server-s
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt install -y nodejs
-RUN apt install -g debug
+RUN npm install -g debug
 RUN npm install -g @sideex/runner
 
 RUN npm install
