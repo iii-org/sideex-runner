@@ -210,6 +210,7 @@ function analyze(data) {
         const result = {
             passed: 0,
             total: 0,
+            name: title,
             cases: []
 
         }
@@ -230,13 +231,12 @@ function analyze(data) {
             if (passed) {
                 result.passed ++
             }
+
             result.total ++
             result.cases.push(case_object)
             ret.suites[title] = result
-
         }
     }
-    console.log(ret)
     return ret
 }
 
