@@ -5,8 +5,10 @@ const fs = require('fs')
 const {spawn, execSync} = require("child_process")
 
 const STORAGE_PREFIX = 'repo/iiidevops/sideex/'
-const SUITES_PREFIX = 'suites/'
-const VAR_PREFIX = 'vars/'
+const DEFAULT_VARIABLES = 'Global Variables.json'
+// const SUITES_PREFIX = 'suites/'
+// const VAR_PREFIX = 'vars/'
+
 const git = {
     url: process.env['git_url'],
     pUrl: parse(process.env['git_url']),
@@ -45,34 +47,33 @@ try {
             console.log('Selenium is not up in 30 seconds!')
             process.exit(1)
         }
-
-        console.log('Inserting test suites...')
         const config = JSON.parse(fs.readFileSync('config.json'))
-        var testVariables = {}
-        const targetOrigin = process.env['target_origin']
-        const variable_files = fs.readdirSync(STORAGE_PREFIX + VAR_PREFIX)
-        console.log("Read Variables Json File")
-        for (const variable_file of variable_files) {
-            if (variable_file.endsWith('.json')) {
-                console.log(variable_file)
-                testVariables = Object.assign(testVariables, JSON.parse(fs.readFileSync(STORAGE_PREFIX + VAR_PREFIX + variable_file)));
-            }
-        }
-        testVariables['target_origin'] = targetOrigin
-        var variable_file = STORAGE_PREFIX + VAR_PREFIX + 'variables.json'
-        fs.writeFileSync(variable_file, JSON.stringify(testVariables))
-        config.input.variables = [variable_file]
-
+        console.log('Inserting test suites...')
         const testSuites = []
         console.log("Read Test Suites Json File")
-        const suites = fs.readdirSync(STORAGE_PREFIX + SUITES_PREFIX)
+        const suites = fs.readdirSync(STORAGE_PREFIX)
         for (const file of suites) {
-            if (file.endsWith('.json')) {
+            if (file.endsWith('.json') && file !== DEFAULT_VARIABLES) {
                 console.log(file)
-                testSuites.push(STORAGE_PREFIX + SUITES_PREFIX + file)
+                testSuites.push(STORAGE_PREFIX + file)
             }
         }
         config.input.testSuites = testSuites
+        console.log("Read Variables Json File")
+        var testVariables = {}
+        const targetOrigin = process.env['target_origin']
+
+        const variable_files = fs.readdirSync(STORAGE_PREFIX)
+        for (const variable_file of variable_files) {
+            if (variable_file === DEFAULT_VARIABLES) {
+                testVariables = Object.assign(testVariables, JSON.parse(fs.readFileSync(STORAGE_PREFIX + variable_file)));
+            }
+        }
+        testVariables["target_origin"] = targetOrigin
+        console.log(testVariables)
+        fs.writeFileSync(STORAGE_PREFIX + DEFAULT_VARIABLES, JSON.stringify(testVariables))
+        var variable_file = STORAGE_PREFIX + DEFAULT_VARIABLES
+        config.input.variables = [variable_file]
         fs.writeFileSync('config.json', JSON.stringify(config))
         console.log('Running Sideex...')
         fs.rmdirSync("report", {recursive: true})
@@ -91,7 +92,7 @@ try {
                 reportJSON = `report/${file}`
             }
         })
-        // selenium.kill()
+        selenium.kill()
         if (! reportHTML) {
             console.log('Cannot find report file!')
             process.exit(1)
