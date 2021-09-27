@@ -23,6 +23,8 @@ const global = {
 }
 
 if (verbose) {
+    process.env.TZ = 'Asia/Taipei'
+    console.log('Current time is ' + (new Date().toLocaleString()))
     console.log('Log into API server...')
 }
 
