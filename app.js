@@ -5,6 +5,9 @@ const fs = require('fs')
 const {spawn, execSync} = require("child_process")
 
 const STORAGE_PREFIX = 'repo/iiidevops/sideex/'
+const DEFAULT_VARIABLES = 'Global Variables.json'
+// const SUITES_PREFIX = 'suites/'
+// const VAR_PREFIX = 'vars/'
 
 const git = {
     url: process.env['git_url'],
@@ -46,24 +49,34 @@ try {
             console.log('Selenium is not up in 30 seconds!')
             process.exit(1)
         }
-
-        const targetOrigin = process.env['target_origin']
-        console.log('Generating variables.json, target_origin=' + targetOrigin)
-        fs.writeFileSync('variables.json',
-            `{ "target_origin": "${targetOrigin}" }`)
-
-        console.log('Inserting test suites...')
         const config = JSON.parse(fs.readFileSync('config.json'))
+        console.log('Inserting test suites...')
         const testSuites = []
+        console.log("Read Test Suites Json File")
         const suites = fs.readdirSync(STORAGE_PREFIX)
         for (const file of suites) {
-            if (file.endsWith('.json')) {
+            if (file.endsWith('.json') && file !== DEFAULT_VARIABLES) {
+                console.log(file)
                 testSuites.push(STORAGE_PREFIX + file)
             }
         }
         config.input.testSuites = testSuites
-        fs.writeFileSync('config.json', JSON.stringify(config))
+        console.log("Read Variables Json File")
+        var testVariables = {}
+        const targetOrigin = process.env['target_origin']
 
+        const variable_files = fs.readdirSync(STORAGE_PREFIX)
+        for (const variable_file of variable_files) {
+            if (variable_file === DEFAULT_VARIABLES) {
+                testVariables = Object.assign(testVariables, JSON.parse(fs.readFileSync(STORAGE_PREFIX + variable_file)));
+            }
+        }
+        testVariables["target_origin"] = targetOrigin
+        console.log(testVariables)
+        fs.writeFileSync(STORAGE_PREFIX + DEFAULT_VARIABLES, JSON.stringify(testVariables))
+        var variable_file = STORAGE_PREFIX + DEFAULT_VARIABLES
+        config.input.variables = [variable_file]
+        fs.writeFileSync('config.json', JSON.stringify(config))
         console.log('Running Sideex...')
         fs.rmdirSync("report", {recursive: true})
         fs.mkdirSync('report')
@@ -82,7 +95,7 @@ try {
             }
         })
         selenium.kill()
-        if (!reportHTML) {
+        if (! reportHTML) {
             console.log('Cannot find report file!')
             process.exit(1)
         }
@@ -90,6 +103,7 @@ try {
         const data = fs.readFileSync(reportJSON, 'utf-8')
         const report = fs.readFileSync(reportHTML, 'utf-8')
         const result = analyze(data)
+        console.log(result)
         console.log('Uploading to API server...')
         await mentionFinish(testId, JSON.stringify(result), report)
         console.log('Job done.')
@@ -105,14 +119,27 @@ function login() {
             password: process.env['password']
         }).then(json => {
             global.jwtToken = json.data.token
-            if (verbose) console.log('Retrieving repo_id...')
-            apiGet(`/repositories/id?repository_url=${git.url}`)
-                .then(json => {
-                    global.projectId = json.data.project_id
-                    global.repoId = json.data.repository_id
-                    if (verbose) console.log('repo_id is ' + global.repoId)
-                    resolve()
-                })
+            if (verbose) 
+                console.log('Retrieving repo_id...')
+
+
+            
+
+
+            apiGet(`/repositories/id?repository_url=${
+                git.url
+            }`).then(json => {
+                global.projectId = json.data.project_id
+                global.repoId = json.data.repository_id
+                if (verbose) 
+                    console.log('repo_id is ' + global.repoId)
+
+
+                
+
+
+                resolve()
+            })
         })
     })
 }
@@ -131,7 +158,7 @@ async function mentionStart() {
     const json = await apiPost('/sideex', null, {
         project_name: process.env['project_name'],
         branch: process.env['git_branch'],
-        commit_id: process.env['git_commit_id'],
+        commit_id: process.env['git_commit_id']
     })
     return json.data.test_id
 }
@@ -169,11 +196,7 @@ async function checkSelenium() {
 }
 
 async function mentionFinish(test_id, result, report) {
-    await apiPut(
-        `/sideex`,
-        null,
-        {test_id, result, report}
-    )
+    await apiPut(`/sideex`, null, {test_id, result, report})
 }
 
 function analyze(data) {
@@ -190,19 +213,30 @@ function analyze(data) {
         const result = {
             passed: 0,
             total: 0,
+            name: title,
+            cases: []
+
         }
         for (const caseIndex of suite.cases) {
             let passed = true
+            let case_object = {
+                "title": json.cases[caseIndex].title,
+                "status": json.cases[caseIndex].status
+            }
+            // Record Steps
             for (const record of json.cases[caseIndex].records) {
                 if (record.status === 'fail') {
                     passed = false
                     break
+
                 }
             }
             if (passed) {
-                result.passed++
+                result.passed ++
             }
-            result.total++
+
+            result.total ++
+            result.cases.push(case_object)
             ret.suites[title] = result
         }
     }
@@ -213,50 +247,57 @@ function analyze(data) {
 
 function apiGet(path, headers) {
     return new Promise((resolve, reject) => {
-        if (!headers) {
+        if (! headers) {
             headers = {}
         }
-        headers['Authorization'] = `Bearer ${global.jwtToken}`
-        const opts = {headers}
-        fetch(process.env['api_origin'] + path, opts)
-            .then(res => res.json())
-            .then(json => resolve(json))
-            .catch(err => console.error(err))
+        headers['Authorization'] = `Bearer ${
+            global.jwtToken
+        }`
+        const opts = {
+            headers
+        }
+        fetch(process.env['api_origin'] + path, opts).then(res => res.json()).then(json => resolve(json)).catch(err => console.error(err))
     })
 }
 
 function apiPost(path, headers, body) {
     return new Promise((resolve, reject) => {
-        if (!headers) {
+        if (! headers) {
             headers = {}
         }
-        headers['Authorization'] = `Bearer ${global.jwtToken}`
+        headers['Authorization'] = `Bearer ${
+            global.jwtToken
+        }`
         const params = new URLSearchParams()
         for (let key in body) {
             params.append(key, body[key])
         }
-        const opts = {method: 'POST', headers, body: params}
-        fetch(process.env['api_origin'] + path, opts)
-            .then(res => res.json())
-            .then(json => resolve(json))
-            .catch(err => console.error(err))
+        const opts = {
+            method: 'POST',
+            headers,
+            body: params
+        }
+        fetch(process.env['api_origin'] + path, opts).then(res => res.json()).then(json => resolve(json)).catch(err => console.error(err))
     })
 }
 
 function apiPut(path, headers, body) {
     return new Promise((resolve, reject) => {
-        if (!headers) {
+        if (! headers) {
             headers = {}
         }
-        headers['Authorization'] = `Bearer ${global.jwtToken}`
+        headers['Authorization'] = `Bearer ${
+            global.jwtToken
+        }`
         const params = new URLSearchParams()
         for (let key in body) {
             params.append(key, body[key])
         }
-        const opts = {method: 'PUT', headers, body: params}
-        fetch(process.env['api_origin'] + path, opts)
-            .then(res => res.json())
-            .then(json => resolve(json))
-            .catch(err => console.error(err))
+        const opts = {
+            method: 'PUT',
+            headers,
+            body: params
+        }
+        fetch(process.env['api_origin'] + path, opts).then(res => res.json()).then(json => resolve(json)).catch(err => console.error(err))
     })
 }

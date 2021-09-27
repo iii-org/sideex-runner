@@ -2,7 +2,8 @@
 Sideex runner for III-devops system.
 
 # Usage
-Save your Sideex script file named `sideex.json`, then put it under `<your project root>/iiidevops/sideex`.
+Save your Sideex script files with extension `.json`, then put it under `<your project root>/iiidevops/sideex`.
+For the target URL, you must use `${target_origin}` variable.
 
 # pipeline.yaml usage
 ```
