@@ -2,7 +2,9 @@ FROM openjdk:8
 
 WORKDIR /usr/src/app
 # Google Chrome Version 94.04606.54
-# RUN wget https://chromedriver.storage.googleapis.com/94.0.4606.41/chromedriver_linux64.zip Download command
+# Download command
+# RUN wget https://chromedriver.storage.googleapis.com/94.0.4606.41/chromedriver_linux64.zip 
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 COPY app.js config.json package.json google-chrome-stable_current_amd64.deb ./ 
 
 RUN apt update
